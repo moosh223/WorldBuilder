@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="StarBuilder">
+    <output-path>$PROJECT_DIR$/out/artifacts/StarBuilder</output-path>
+    <root id="archive" name="StarBuilder.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="WorldBuilder" />
+    </root>
+  </artifact>
+</component>
