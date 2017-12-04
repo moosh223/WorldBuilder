@@ -1,5 +1,6 @@
 package stars;
 
+import java.awt.*;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -12,21 +13,23 @@ public class StarSheet {
     private File outputFile;
     private BufferedWriter bw;
     private StarMath starMath = new StarMath();
-    private enum StarType {
-        O ((int)((NUMBER_OF_STARS*.9) * .0003f+1), 16, 50),
-        B ((int)((NUMBER_OF_STARS*.9) * .0013f), 2.1, 16),
-        A ((int)((NUMBER_OF_STARS*.9) * .006f), 1.4, 2.1),
-        F ((int)((NUMBER_OF_STARS*.9) * .03f), 1.04, 1.4),
-        G ((int)((NUMBER_OF_STARS*.9) * .076f), 0.8, 1.04),
-        K ((int)((NUMBER_OF_STARS*.9) * .121), 0.45 , 0.8),
-        M ((int)((NUMBER_OF_STARS*.9) * .7645f), .08, 0.45);
+    public enum StarType {
+        O ((int)((NUMBER_OF_STARS*.9) * .0003f+1), 16, 50, Color.white.getRGB()),
+        B ((int)((NUMBER_OF_STARS*.9) * .0013f), 2.1, 16, Color.white.getRGB()),
+        A ((int)((NUMBER_OF_STARS*.9) * .006f), 1.4, 2.1, Color.cyan.getRGB()),
+        F ((int)((NUMBER_OF_STARS*.9) * .03f), 1.04, 1.4, Color.blue.getRGB()),
+        G ((int)((NUMBER_OF_STARS*.9) * .076f), 0.8, 1.04, Color.yellow.getRGB()),
+        K ((int)((NUMBER_OF_STARS*.9) * .121), 0.45 , 0.8, Color.orange.getRGB()),
+        M ((int)((NUMBER_OF_STARS*.9) * .7645f), .08, 0.45, Color.red.getRGB());
         private final int starCount;
         private final double lowerMassLimit;
         private final double upperMassLimit;
-        StarType(int starCount, double smallestMass, double biggestMass){
+        public final int rgbValue;
+        StarType(int starCount, double smallestMass, double biggestMass, int rgbValue){
             this.starCount = starCount;
             this.lowerMassLimit = smallestMass;
             this.upperMassLimit = biggestMass;
+            this.rgbValue = rgbValue;
         }
     }
 

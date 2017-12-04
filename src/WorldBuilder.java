@@ -1,10 +1,6 @@
 import stars.StarMap;
 import stars.StarSheet;
 
-/**
- *
- * @author Josh
- */
 public class WorldBuilder {
 	private static final int NUMBER_OF_STARS = 500000;
 	private static final int WIDTH = NUMBER_OF_STARS/10;

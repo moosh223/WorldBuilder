@@ -53,23 +53,11 @@ public class StarMap {
     }
 
     private int getStarColor(String starType) {
-        switch(starType) {
-            case "O":
-                return Color.white.getRGB();
-            case "B":
-                return Color.white.getRGB();
-            case "A":
-                return Color.cyan.getRGB();
-            case "F":
-                return Color.blue.getRGB();
-            case "G":
-                return Color.yellow.getRGB();
-            case "K":
-                return Color.orange.getRGB();
-            case "M":
-                return Color.red.getRGB();
-            default:
-                return Color.black.getRGB();
+        for(StarSheet.StarType type: StarSheet.StarType.values()){
+            if(type.toString().equals(starType)){
+                return type.rgbValue;
+            }
         }
+        return Color.black.getRGB();
     }
 }
