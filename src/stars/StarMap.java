@@ -10,18 +10,14 @@ import java.io.IOException;
 
 public class StarMap {
 
-    private static int WIDTH;
-    private static int HEIGHT;
     private File dataFile;
     private File outputFile;
     private BufferedImage starMap;
 
     public StarMap(String file, int width, int height){
-        WIDTH = width;
-        HEIGHT = height;
         dataFile = new File(file+".txt");
         outputFile = new File(file+".png");
-        starMap = util.BigBufferedImage.create(WIDTH, HEIGHT, util.BigBufferedImage.TYPE_INT_RGB);
+        starMap = util.BigBufferedImage.create(width, height, util.BigBufferedImage.TYPE_INT_RGB);
         parseInput();
         saveStarMap();
     }
