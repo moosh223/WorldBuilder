@@ -7,21 +7,19 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.math.BigInteger;
 
 public class StarMap {
 
-    private static int WIDTH;
-    private static int HEIGHT;
-    private File dataFile;
-    private File outputFile;
-    private BufferedImage starMap;
+    private final File dataFile;
+    private final File outputFile;
+    private final BufferedImage starMap;
 
     public StarMap(String file, int width, int height){
-        WIDTH = width;
-        HEIGHT = height;
-        dataFile = new File(file+".txt");
+        dataFile = new File(file+".star");
         outputFile = new File(file+".png");
-        starMap = util.BigBufferedImage.create(WIDTH, HEIGHT, util.BigBufferedImage.TYPE_INT_RGB);
+        starMap = util.BigBufferedImage.create(width, height , util.BigBufferedImage.TYPE_INT_RGB);
+        System.out.println("Map Created");
         parseInput();
         saveStarMap();
     }

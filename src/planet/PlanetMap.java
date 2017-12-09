@@ -11,15 +11,12 @@ import java.nio.file.Files;
 
 public class PlanetMap {
 
-    private File dataFolder;
+    private final File dataFolder;
     private File outputFile;
     private BufferedImage planetMap;
 
     public PlanetMap(String file) {
         dataFolder = new File(file);
-        try {
-            Files.createDirectory(new File("planetMaps").toPath());
-        }catch(IOException e){}
         parseInput();
         savePlanetMap();
     }

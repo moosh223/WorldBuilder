@@ -5,14 +5,15 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.math.BigInteger;
 
 public class StarSheet {
     private static int NUMBER_OF_STARS;
     private static int WIDTH;
     private static int HEIGHT;
-    private File outputFile;
+    private final File outputFile;
     private BufferedWriter bw;
-    private StarMath starMath = new StarMath();
+    private final StarMath starMath = new StarMath();
     public enum StarType {
         O ((int)((NUMBER_OF_STARS*.9) * .0003f+1), 16, 50, Color.white.getRGB()),
         B ((int)((NUMBER_OF_STARS*.9) * .0013f), 2.1, 16, Color.white.getRGB()),
@@ -37,7 +38,7 @@ public class StarSheet {
             NUMBER_OF_STARS = starCount;
             WIDTH = width;
             HEIGHT = height;
-            outputFile = new File(filename+".txt");
+            outputFile = new File(filename+".star");
             generateStars();
     }
 

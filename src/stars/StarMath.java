@@ -3,7 +3,7 @@ package stars;
 import java.util.Random;
 
 public class StarMath {
-	private Random rand = new Random();
+	private final Random rand = new Random();
 
 	public double getRadius(double mass){
 		if (mass < 1){
